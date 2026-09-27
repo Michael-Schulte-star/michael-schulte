@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0610">
+  <meta name="description" content="Michael Schulte authorized management portal — tour tickets, membership, merchandise and live-meet inquiries.">
+  <title>Michael Schulte | Tour & Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero" id="home">
+      <nav class="nav container">
+        <a class="brand" href="#home">MICHAEL <span>SCHULTE</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+          <a href="#tour">Tour</a>
+          <a href="#membership">Membership</a>
+          <a href="#merch">Merch</a>
+          <a href="#meet">Meet & Greet</a>
+          <a class="nav-cta" href="#contact">Contact Management</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <p class="eyebrow">AUTHORIZED MANAGEMENT PORTAL</p>
+          <h1>Beautiful Reasons.<br><em>Live.</em></h1>
+          <p class="hero-text">Explore upcoming 2026/27 shows, membership cards, tour merchandise and live-meet requests.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#tour">Explore Tour</a>
+            <a class="btn btn-ghost" href="#membership">View Membership</a>
+          </div>
+          <p class="hero-note">Ticket and package availability is confirmed individually by management.</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-glow"></div>
+          <div class="hero-card-inner">
+            <span>2026 / 2027</span>
+            <strong>TOUR</strong>
+            <small>MICHAEL SCHULTE & BAND</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="tour">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">UPCOMING EVENTS</p>
+              <h2>Tour dates & tickets</h2>
+            </div>
+            <div class="filters">
+              <select id="tourFilter"><option value="all">All tours</option></select>
+              <select id="countryFilter"><option value="all">All countries</option></select>
+            </div>
+          </div>
+          <div id="eventsGrid" class="events-grid"></div>
+        </div>
+      </section>
+
+      <section class="section alt" id="membership">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">FAN MEMBERSHIP</p>
+              <h2>Choose your level</h2>
+              <p class="muted">Membership pricing is shown in EUR. Management confirms international pricing and availability during inquiry.</p>
+            </div>
+          </div>
+          <div id="membershipGrid" class="membership-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="merch">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TOUR MERCHANDISE</p>
+              <h2>Fan shop</h2>
+            </div>
+          </div>
+          <div id="merchGrid" class="merch-grid"></div>
+        </div>
+      </section>
+
+      <section class="section alt" id="meet">
+        <div class="container meet-layout">
+          <div>
+            <p class="eyebrow">EXCLUSIVE EXPERIENCE</p>
+            <h2>Live Meet & Greet</h2>
+            <p class="lead">Request a live meet, backstage experience or other authorized fan interaction. Availability, venue rules and eligibility are confirmed by management for each request.</p>
+            <ul class="feature-list">
+              <li>Choose your preferred show</li>
+              <li>Select the number of guests</li>
+              <li>Add your preferred package</li>
+              <li>Management confirms availability and final details</li>
+            </ul>
+          </div>
+          <div class="meet-panel">
+            <label>Preferred show
+              <select id="meetEvent"></select>
+            </label>
+            <label>Guests
+              <input id="meetGuests" type="number" min="1" max="10" value="1">
+            </label>
+            <label>Request type
+              <select id="meetType">
+                <option>Live Meet & Greet</option>
+                <option>Backstage Experience</option>
+                <option>Private Fan Interaction</option>
+                <option>Other Management Inquiry</option>
+              </select>
+            </label>
+            <button class="btn btn-primary full" id="meetAdd">Add to inquiry</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section summary-section" id="contact">
+        <div class="container summary-layout">
+          <div>
+            <p class="eyebrow">YOUR REQUEST</p>
+            <h2>Review your selections</h2>
+            <div id="summary" class="summary-box">
+              <p class="muted">Nothing selected yet. Choose a ticket, membership, merchandise or meet request.</p>
+            </div>
+          </div>
+
+          <div class="contact-panel">
+            <p class="eyebrow">FINAL STEP</p>
+            <h3>Contact Management</h3>
+            <p class="muted">Choose how you want to send your inquiry. Your message will be generated from your selections.</p>
+
+            <label>Your name
+              <input id="customerName" type="text" placeholder="Your full name">
+            </label>
+            <label>Your country
+              <select id="customerCountry"></select>
+            </label>
+
+            <div class="contact-methods">
+              <button class="contact-btn" data-method="telegram">Telegram <span>@michaelschultemanagement</span></button>
+              <button class="contact-btn" data-method="signal">Signal <span>@michaelschultemanagement.02</span></button>
+              <button class="contact-btn" data-method="imo">IMO <span>imoid_00DKxlCQBY</span></button>
+              <button class="contact-btn" data-method="email">Gmail <span>m.schultemanagement@gmail.com</span></button>
+            </div>
+
+            <div id="messagePreview" class="message-preview">
+              Select an item and a contact method to generate your inquiry.
+            </div>
+
+            <div class="contact-actions">
+              <button id="copyMessage" class="btn btn-ghost full">Copy inquiry message</button>
+              <button id="sendMessage" class="btn btn-primary full">Contact Management</button>
+            </div>
+            <p class="microcopy">WhatsApp and iMessage are not included until an authorized number/address is supplied; no contact details are invented.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <strong>MICHAEL SCHULTE</strong>
+          <p>Tour • Membership • Merchandise • Management inquiries</p>
+        </div>
+        <div class="footer-links">
+          <a href="#tour">Tour</a>
+          <a href="#membership">Membership</a>
+          <a href="#merch">Merch</a>
+          <a href="#contact">Management</a>
+        </div>
+      </div>
+      <div class="container legal">© 2026–2027 Michael Schulte management portal. Event information should be kept synchronized with authorized management inventory.</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
